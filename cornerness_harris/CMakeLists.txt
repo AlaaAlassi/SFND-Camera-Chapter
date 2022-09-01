@@ -15,4 +15,8 @@ add_definitions(${OpenCV_DEFINITIONS})
 
 # Executables for exercise
 add_executable (cornerness_harris src/cornerness_harris.cpp)
+add_executable (solution src/solution.cpp)
+
 target_link_libraries (cornerness_harris ${OpenCV_LIBRARIES})
+target_link_libraries (solution ${OpenCV_LIBRARIES})
+

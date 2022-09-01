@@ -26,12 +26,26 @@ void cornernessHarris()
     cv::cornerHarris(img, dst, blockSize, apertureSize, k, cv::BORDER_DEFAULT);
     cv::normalize(dst, dst_norm, 0, 255, cv::NORM_MINMAX, CV_32FC1, cv::Mat());
     cv::convertScaleAbs(dst_norm, dst_norm_scaled);
+    int thresh  = 100;
+    for( int i = 0; i < dst_norm.rows ; i++ )
+        {
+            for( int j = 0; j < dst_norm.cols; j++ )
+            {
+                if( (int) dst_norm.at<float>(i,j) > thresh )
+                {
+                    circle( dst_norm_scaled, cv::Point(j,i), 5,  cv::Scalar(0), 2, 8, 0 );
+                }
+            }
+        }
+
 
     // visualize results
     string windowName = "Harris Corner Detector Response Matrix";
     cv::namedWindow(windowName, 4);
     cv::imshow(windowName, dst_norm_scaled);
     cv::waitKey(0);
+
+
 
     // TODO: Your task is to locate local maxima in the Harris response matrix 
     // and perform a non-maximum suppression (NMS) in a local neighborhood around 
