@@ -15,4 +15,6 @@ add_definitions(${OpenCV_DEFINITIONS})
 
 # Executable for create matrix exercise
 add_executable (compute_ttc_camera src/compute_ttc_camera.cpp src/structIO.cpp)
+add_executable (solution_ttc_camera src/solution_ttc_camera.cpp src/structIO.cpp)
 target_link_libraries (compute_ttc_camera ${OpenCV_LIBRARIES})
+target_link_libraries (solution_ttc_camera ${OpenCV_LIBRARIES})
