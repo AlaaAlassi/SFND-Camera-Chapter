@@ -35,3 +35,5 @@
 cornerness_harris/build/*
 TTC_camera/build/*
 TTC_lidar/build/*
+gaussian_filtering/build/*
+
