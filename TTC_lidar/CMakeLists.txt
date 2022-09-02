@@ -16,3 +16,6 @@ add_definitions(${OpenCV_DEFINITIONS})
 # Executable for create matrix exercise
 add_executable (compute_ttc_lidar src/compute_ttc_lidar.cpp src/structIO.cpp)
 target_link_libraries (compute_ttc_lidar ${OpenCV_LIBRARIES})
+
+add_executable (solution_ttc_lidar src/solution_ttc_lidar.cpp src/structIO.cpp)
+target_link_libraries (solution_ttc_lidar ${OpenCV_LIBRARIES})
