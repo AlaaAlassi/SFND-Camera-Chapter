@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
-add_definitions(-std=c++11)
+add_definitions(-std=c++17)
 
 set(CXX_FLAGS "-Wall" "-pedantic")
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
@@ -20,3 +20,4 @@ add_executable (solution src/solution.cpp)
 target_link_libraries (cornerness_harris ${OpenCV_LIBRARIES})
 target_link_libraries (solution ${OpenCV_LIBRARIES})
 
+add_subdirectory(tests)
